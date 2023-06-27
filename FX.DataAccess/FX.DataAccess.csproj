@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FX.Application\FX.Application.csproj" />
+    <ProjectReference Include="..\FX.Data\FX.Data.csproj" />
+  </ItemGroup>
+
+</Project>
