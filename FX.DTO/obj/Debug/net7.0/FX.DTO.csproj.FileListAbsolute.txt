@@ -10,3 +10,15 @@ C:\Users\taiwo\Desktop\FX\FX.DTO\obj\Debug\net7.0\FX.DTO.dll
 C:\Users\taiwo\Desktop\FX\FX.DTO\obj\Debug\net7.0\refint\FX.DTO.dll
 C:\Users\taiwo\Desktop\FX\FX.DTO\obj\Debug\net7.0\FX.DTO.pdb
 C:\Users\taiwo\Desktop\FX\FX.DTO\obj\Debug\net7.0\ref\FX.DTO.dll
+C:\Users\USER\Desktop\FX\FX.DTO\bin\Debug\net7.0\FX.DTO.deps.json
+C:\Users\USER\Desktop\FX\FX.DTO\bin\Debug\net7.0\FX.DTO.dll
+C:\Users\USER\Desktop\FX\FX.DTO\bin\Debug\net7.0\FX.DTO.pdb
+C:\Users\USER\Desktop\FX\FX.DTO\obj\Debug\net7.0\FX.DTO.csproj.AssemblyReference.cache
+C:\Users\USER\Desktop\FX\FX.DTO\obj\Debug\net7.0\FX.DTO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\USER\Desktop\FX\FX.DTO\obj\Debug\net7.0\FX.DTO.AssemblyInfoInputs.cache
+C:\Users\USER\Desktop\FX\FX.DTO\obj\Debug\net7.0\FX.DTO.AssemblyInfo.cs
+C:\Users\USER\Desktop\FX\FX.DTO\obj\Debug\net7.0\FX.DTO.csproj.CoreCompileInputs.cache
+C:\Users\USER\Desktop\FX\FX.DTO\obj\Debug\net7.0\FX.DTO.dll
+C:\Users\USER\Desktop\FX\FX.DTO\obj\Debug\net7.0\refint\FX.DTO.dll
+C:\Users\USER\Desktop\FX\FX.DTO\obj\Debug\net7.0\FX.DTO.pdb
+C:\Users\USER\Desktop\FX\FX.DTO\obj\Debug\net7.0\ref\FX.DTO.dll

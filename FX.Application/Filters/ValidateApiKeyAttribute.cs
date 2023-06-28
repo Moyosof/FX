@@ -22,7 +22,7 @@ namespace FX.Application.Filters
 
 
 
-            string apiKey = Environment.GetEnvironmentVariable("Selenia_API_KEY");
+            string apiKey = Environment.GetEnvironmentVariable("FX_API_KEY");
 
             if (!apiKey.Equals(potentialApiKey))
             {

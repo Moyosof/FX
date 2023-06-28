@@ -28,6 +28,8 @@ using FX.Infrastructure.Contracts;
 using FX.Infrastructure.EmailService;
 using FX.Infrastructure.JwtToken;
 using FX.Infrastructure.SmsService;
+using FX.Application.Contracts.Auth;
+using FX.Infrastructure.Contracts.Auth;
 
 namespace FX.IoC.Dependencies
 {
@@ -49,6 +51,8 @@ namespace FX.IoC.Dependencies
             services.AddScoped<ITokenGenerator, TokenGenerator>();
             services.AddScoped<IBusinessRule, BusinessRule>();
             services.AddScoped<ISqlDBObjects, SqlDBObjects>();
+            services.AddScoped<IUserAuth, UserAuth>();
+
 
             services.AddTransient<IMailService, MailService>();
             services.AddTransient<ISmsService, SmsService>();

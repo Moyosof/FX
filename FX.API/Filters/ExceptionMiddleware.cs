@@ -33,9 +33,9 @@ namespace FX.API.Filters
                 httpContext.Response.StatusCode = (int)HttpStatusCode.OK;
                 await httpContext.Response.WriteAsJsonAsync(new JsonMessage<string>()
                 {
-                    Status = false,
-                    StatusCode = (int)HttpStatusCode.InternalServerError,
-                    ErrorMessage = ResponseMessages.InternalServerError
+                    status = false,
+                    status_code = (int)HttpStatusCode.InternalServerError,
+                    error_message = ResponseMessages.InternalServerError
                 });
             }
         }

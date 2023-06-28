@@ -7,23 +7,23 @@ namespace FX.API.Helpers
     public class JsonMessage<T>
     {
         [JsonProperty("result")]
-        public List<T> Results { get; set; }
+        public List<T> result { get; set; }
 
         [JsonProperty("status")]
-        public bool Status { get; set; }
+        public bool status { get; set; }
 
         [JsonProperty("is_verified")]
-        public bool IsVerified { get; set; }
+        public bool is_verified { get; set; }
 
         [JsonProperty(PropertyName = "error_message")]
-        public string ErrorMessage { get; set; }
+        public string error_message { get; set; }
 
         [JsonProperty("success_message")]
-        public string SuccessMessage { get; set; }
+        public string success_message { get; set; }
 
         [JsonProperty("meta_data")]
-        public MetaData MetaData { get; set; }
+        public MetaData meta_data { get; set; }
         [JsonProperty("status_code")]
-        public int StatusCode { get; internal set; }
+        public int status_code { get; internal set; }
     }
 }
