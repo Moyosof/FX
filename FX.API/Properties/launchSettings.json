@@ -7,7 +7,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
         "swagger_credentials": "admin:admin",
-        "Selenia_API_KEY": "80109414-c38e-4bed-b251-190ee1f88190"
+        "FX_API_KEY": "b171c23f-2a90-4f47-bfa6-9b1a27a9c491"
       }
     },
     "WebA[iSetup.API": {
