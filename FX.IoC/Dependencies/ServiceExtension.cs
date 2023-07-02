@@ -128,7 +128,7 @@ namespace FX.IoC.Dependencies
                     Contact = new OpenApiContact
                     {
                         Name = "FX Services",
-                        Email = "support@Selenia.com",
+                        Email = "support@ELOC.com",
                         Url = new Uri("https://ebisike.github.io/resume"),
                     },
                     License = new OpenApiLicense

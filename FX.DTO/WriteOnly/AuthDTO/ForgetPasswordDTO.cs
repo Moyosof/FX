@@ -1,12 +1,23 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FX.DTO.WriteOnly.AuthDTO
 {
-    internal class ForgetPasswordDTO
+    public class ForgetPasswordDTO
     {
+        [Required]
+        [JsonProperty("Email")]
+        [EmailAddress]
+        public string Email { get; set; }
+
+        [Required]
+        [JsonProperty("ResetPassword")]
+        
+        public string ResetPasswordPageLink { get; set; }
     }
 }

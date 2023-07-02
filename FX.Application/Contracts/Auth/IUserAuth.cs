@@ -13,5 +13,11 @@ namespace FX.Application.Contracts.Auth
         Task<string> RegisterUser(RegisterUserDTO registerUser);
         Task<string> RegisterFXAdmin(RegisterUserDTO registerUser);
         Task<string> CreateRoleAndAddUserToRole(string name, ApplicationUser user);
+        Task<string> LoginUser(LoginDTO loginDTO);
+        Task<ApplicationUser> GetByUserName(string userName);
+        Task<List<string>> GetUserRoles(ApplicationUser user);
+        Task<string> ChangePassword(string userEmail, ChangePasswordDTO passwordDTO);
+        Task<string> PasswordResetToken(ApplicationUser user);
+        Task<string> ResetUserPassword(ApplicationUser user, string token, string newPassword);
     }
 }

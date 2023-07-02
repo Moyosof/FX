@@ -21,7 +21,7 @@ namespace FX.Application.Contracts
         /// <param name="username"></param>
         /// <param name="roles"></param>
         /// <returns></returns>
-        Task<AuthResponse> GenerateJwtToken(string user_id, string phoneNumber, string username, string email, IList<string> roles = null);
+        Task<AuthResponse> GenerateJwtToken(string user_id, string username, string email, IList<string> roles = null);
 
         /// <summary>
         /// This service is used in verifying the refresh token to generate new jwt

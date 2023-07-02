@@ -35,8 +35,9 @@ namespace FX.Infrastructure.JwtToken
             _jwtSettings = jwtsettings.Value;
         }
 
-        public async Task<AuthResponse> GenerateJwtToken(string user_id, string phoneNumber, string username, string email, IList<string> roles = null)
+        public async Task<AuthResponse> GenerateJwtToken(string user_id, string username, string email, IList<string> roles = null)
         {
+            ApplicationUser user = await userManager.FindByIdAsync(user_id);
             var expirationDate = DateTime.UtcNow.AddDays(1); //Convert.ToDouble(_jwtsettings.ExpirationTime);
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_jwtSettings.Secret));
@@ -48,10 +49,12 @@ namespace FX.Infrastructure.JwtToken
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                     new Claim(JwtRegisteredClaimNames.Exp, expirationDate.ToString()),
                     new Claim(ClaimTypes.NameIdentifier, user_id),
-                    new Claim(ClaimTypes.MobilePhone, phoneNumber),
                     new Claim(ClaimTypes.Email, email ?? string.Empty),
                     //new Claim(ClaimTypes.Role, roles.FirstOrDefault() ?? ""),
                     //new Claim(ClaimTypes.Sid, customer_id ?? string.Empty),
+                    new Claim(ClaimTypes.Role, roles.FirstOrDefault() ?? string.Empty),
+                    new Claim(ClaimTypes.Name, user.Firstname + " " + user.Lastname ?? string.Empty),
+                    new Claim(ClaimTypes.MobilePhone, user.PhoneNumber ?? string.Empty),
                 }),
                 SigningCredentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature),
                 Issuer = _jwtSettings.Site,
@@ -81,7 +84,7 @@ namespace FX.Infrastructure.JwtToken
                 AccessToken = user_token,
                 UserId = user_id,
                 Username = username,
-                PhoneNumber = phoneNumber,
+                PhoneNumber = user.PhoneNumber,
                 Email = email,
                 FullName = "",
                 //Roles = roles.ToArray(),
@@ -125,7 +128,7 @@ namespace FX.Infrastructure.JwtToken
 
 
 
-                var authResponse = await GenerateJwtToken(dbUser.Id, dbUser.PhoneNumber, dbUser.UserName, dbUser.Email, dbUserRoles);
+                var authResponse = await GenerateJwtToken(dbUser.Id, dbUser.Email, dbUser.Email, dbUserRoles);
 
                 return Map.GetModelResult(new List<AuthResponse>() { authResponse }, true, "Token Generated");
                 //return new() { Succeeded = true, Message = "Token Generated", ModelObject = authResponse };

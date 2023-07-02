@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\USER\\Desktop\\FX\\FX.Application\\FX.Application.csproj": {}
+    "C:\\Users\\taiwo\\Desktop\\FX\\FX.Application\\FX.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\USER\\Desktop\\FX\\FX.Application\\FX.Application.csproj": {
+    "C:\\Users\\taiwo\\Desktop\\FX\\FX.Application\\FX.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\FX\\FX.Application\\FX.Application.csproj",
+        "projectUniqueName": "C:\\Users\\taiwo\\Desktop\\FX\\FX.Application\\FX.Application.csproj",
         "projectName": "FX.Application",
-        "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.Application\\FX.Application.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\FX\\FX.Application\\obj\\",
+        "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.Application\\FX.Application.csproj",
+        "packagesPath": "C:\\Users\\taiwo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\taiwo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\USER\\Desktop\\FX\\FX.Domain\\FX.Domain.csproj": {
-                "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.Domain\\FX.Domain.csproj"
+              "C:\\Users\\taiwo\\Desktop\\FX\\FX.Domain\\FX.Domain.csproj": {
+                "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.Domain\\FX.Domain.csproj"
               },
-              "C:\\Users\\USER\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj": {
-                "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj"
+              "C:\\Users\\taiwo\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj": {
+                "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj"
               }
             }
           }
@@ -94,21 +94,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\USER\\Desktop\\FX\\FX.Domain\\FX.Domain.csproj": {
+    "C:\\Users\\taiwo\\Desktop\\FX\\FX.Domain\\FX.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\FX\\FX.Domain\\FX.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\taiwo\\Desktop\\FX\\FX.Domain\\FX.Domain.csproj",
         "projectName": "FX.Domain",
-        "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.Domain\\FX.Domain.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\FX\\FX.Domain\\obj\\",
+        "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.Domain\\FX.Domain.csproj",
+        "packagesPath": "C:\\Users\\taiwo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\taiwo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -122,8 +122,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\USER\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj": {
-                "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj"
+              "C:\\Users\\taiwo\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj": {
+                "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj"
               }
             }
           }
@@ -153,21 +153,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\USER\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj": {
+    "C:\\Users\\taiwo\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\USER\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj",
+        "projectUniqueName": "C:\\Users\\taiwo\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj",
         "projectName": "FX.DTO",
-        "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj",
-        "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\USER\\Desktop\\FX\\FX.DTO\\obj\\",
+        "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.DTO\\FX.DTO.csproj",
+        "packagesPath": "C:\\Users\\taiwo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\taiwo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -214,7 +214,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }
