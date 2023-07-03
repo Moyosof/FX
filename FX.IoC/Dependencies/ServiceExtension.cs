@@ -30,6 +30,8 @@ using FX.Infrastructure.JwtToken;
 using FX.Infrastructure.SmsService;
 using FX.Application.Contracts.Auth;
 using FX.Infrastructure.Contracts.Auth;
+using System.Net.Mail;
+using System.Net;
 
 namespace FX.IoC.Dependencies
 {
@@ -53,7 +55,7 @@ namespace FX.IoC.Dependencies
             services.AddScoped<ISqlDBObjects, SqlDBObjects>();
             services.AddScoped<IUserAuth, UserAuth>();
 
-
+            services.AddTransient<IFluentEmailClient, FluentEmailClientService>();
             services.AddTransient<IMailService, MailService>();
             services.AddTransient<ISmsService, SmsService>();
 
@@ -111,6 +113,20 @@ namespace FX.IoC.Dependencies
                 options.User.RequireUniqueEmail = true;
             });
 
+            #endregion
+        }
+
+        public static void ConfigureFluentEmail(this IServiceCollection services, IConfiguration Configuration)
+        {
+            #region Fluent Email
+            var client = new SmtpClient();
+            client.Credentials = new NetworkCredential(Configuration["FluentEmail:Username"], Configuration["FluentEmail:Password"]);
+            client.Host = Configuration["FluentEmail:Host"];
+            client.Port = 587;
+            client.EnableSsl = true;
+            services.AddFluentEmail("yusufftope70@gmail.com")
+                .AddRazorRenderer()
+                .AddSmtpSender(client);
             #endregion
         }
 

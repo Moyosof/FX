@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Phf31wSxavhDZmuz63TMnKdqSm8AC0ZpEwqRxVrxOFIkjK/fmGKEUWMDh3GrXnkBzZqwSiazLs8PnB7zHrW9Fw==",
+  "dgSpecHash": "a5ldxyDaULuEcQmvjjMWrufc8p8nsKynP1kPH0yPF+PVctgwJGEFPhCcXsiV+JQ4cvgFFP3zVMPbA8G4BG3IUA==",
   "success": true,
   "projectFilePath": "C:\\Users\\USER\\Desktop\\FX\\FX.Infrastructure\\FX.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\fluentemail.core\\3.0.2\\fluentemail.core.3.0.2.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\USER\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",

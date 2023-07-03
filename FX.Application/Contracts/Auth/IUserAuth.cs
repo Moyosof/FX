@@ -13,5 +13,6 @@ namespace FX.Application.Contracts.Auth
         Task<string> RegisterUser(RegisterUserDTO registerUser);
         Task<string> RegisterFXAdmin(RegisterUserDTO registerUser);
         Task<string> CreateRoleAndAddUserToRole(string name, ApplicationUser user);
+        Task<string> DeleteUser(string Id);
     }
 }

@@ -401,6 +401,10 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "FluentEmail.Core": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
             "MySqlConnector": {
               "target": "Package",
               "version": "[2.2.5, )"

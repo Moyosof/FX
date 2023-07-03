@@ -86,5 +86,17 @@ namespace FX.Infrastructure.Contracts.Auth
             return AddUserToRole.Errors.First().Description;
         }
         #endregion
+
+        public async Task<string> DeleteUser(string Id)
+        {
+            var user = await _userManager.FindByIdAsync(Id);
+            if (user is not null)
+            {
+                await _userManager.DeleteAsync(user);
+                return string.Empty;
+            }
+            return "User not found";
+
+        }
     }
 }
