@@ -54,6 +54,48 @@ namespace FX.Data.Migrations
                     b.ToTable("RefreshTokens");
                 });
 
+            modelBuilder.Entity("FX.Domain.Entities.Core.CourseUpload", b =>
+                {
+                    b.Property<Guid>("CourseId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("CourseDescription")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("CourseTitle")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("CourseId");
+
+                    b.ToTable("CourseUploads");
+                });
+
+            modelBuilder.Entity("FX.Domain.Entities.Core.Lesson", b =>
+                {
+                    b.Property<Guid>("LessonId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("char(36)");
+
+                    b.Property<Guid?>("CourseUploadCourseId")
+                        .HasColumnType("char(36)");
+
+                    b.Property<string>("LessonTitle")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TextContent")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("VideoContent")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("LessonId");
+
+                    b.HasIndex("CourseUploadCourseId");
+
+                    b.ToTable("Lessons");
+                });
+
             modelBuilder.Entity("FX.Domain.Entities.ErrorLog", b =>
                 {
                     b.Property<Guid>("Id")
@@ -75,6 +117,18 @@ namespace FX.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ErrorLogs");
+                });
+
+            modelBuilder.Entity("FX.Domain.Entities.Core.Lesson", b =>
+                {
+                    b.HasOne("FX.Domain.Entities.Core.CourseUpload", null)
+                        .WithMany("Lessons")
+                        .HasForeignKey("CourseUploadCourseId");
+                });
+
+            modelBuilder.Entity("FX.Domain.Entities.Core.CourseUpload", b =>
+                {
+                    b.Navigation("Lessons");
                 });
 #pragma warning restore 612, 618
         }

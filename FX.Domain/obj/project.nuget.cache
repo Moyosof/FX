@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "LJMsO+v2vvEqfoEhQbJGjombphc9kTUwLSoFGjuvemk7xGTCdDb+U1b3bgPA2aet9O/2pkfpBIoM17hm67f5cw==",
+  "dgSpecHash": "elUZqcQKT6bk9uOEH5NHAisjACv7R2XSBYnrca8ZR8X4/TkBF04OZv4/QKUulgT/pCTWyITUWEgN7NGcPV/wiQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.Domain\\FX.Domain.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\taiwo\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\taiwo\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\taiwo\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\taiwo\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\taiwo\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
   ],
   "logs": []
 }

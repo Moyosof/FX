@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FX.DTO\FX.DTO.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ReadOnly\" />
+    <ProjectReference Include="..\FX.DTO\FX.DTO.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FX.Domain.Entities.Core;
 
 namespace FX.Data.Context
 {
@@ -15,7 +16,8 @@ namespace FX.Data.Context
         {
 
         }
-
+        public DbSet<CourseUpload> CourseUploads { get; set; }
+        public DbSet<Lesson> Lessons { get; set; }
 
         public virtual DbSet<ErrorLog> ErrorLogs { get; set; }
         public virtual DbSet<RefreshToken> RefreshTokens { get; set; }

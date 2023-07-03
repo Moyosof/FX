@@ -17,7 +17,7 @@ namespace FX.DTO.WriteOnly.AuthDTO
 
         [Required]
         [JsonProperty("ResetPassword")]
-        
+        [Url]
         public string ResetPasswordPageLink { get; set; }
     }
 }
