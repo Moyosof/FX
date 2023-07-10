@@ -67,6 +67,7 @@ namespace FX.API
             services.ConfigureIdentity();
             services.ConfigureDatabaseConnection(Configuration);
             services.ConfigureJWT(Configuration);
+            services.ConfigureFluentEmail(Configuration);
             services.ConfigureSwagger();
             services.ConfigureApiVersioning();
             services.ConfigureCORS(Configuration);

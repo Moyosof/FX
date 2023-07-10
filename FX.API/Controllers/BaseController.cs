@@ -17,7 +17,7 @@ namespace FX.API.Controllers
         private IBusinessRule _businessRule;
         private IMailService _mailService;
         private ISmsService _smsService;
-        //private IFluentEmailClient _fluentEmail;
+        private IFluentEmailClient _fluentEmail;
 
         private ISqlDBObjects _sql;
         private string _userId;
@@ -29,7 +29,7 @@ namespace FX.API.Controllers
         protected ISqlDBObjects dBObjects => _sql ??= HttpContext.RequestServices.GetRequiredService<ISqlDBObjects>();
         protected IMailService mailService => _mailService ??= HttpContext.RequestServices.GetRequiredService<IMailService>();
         protected ISmsService smsService => _smsService ??= HttpContext.RequestServices.GetRequiredService<ISmsService>();
-       // protected IFluentEmailClient fluentEmail => _fluentEmail ??= HttpContext.RequestServices.GetRequiredService<IFluentEmailClient>();
+        protected IFluentEmailClient fluentEmail => _fluentEmail ??= HttpContext.RequestServices.GetRequiredService<IFluentEmailClient>();
 
         protected string UserId => _userId ??= BusinessRule.GetLoggedInUserId();
         protected string UserEmail => _username ??= BusinessRule.GetCurrentLoggedinUserEmail();

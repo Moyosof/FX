@@ -2,6 +2,8 @@
 using FX.Application.Contracts;
 using FX.Application.Contracts.Auth;
 using FX.Application.DataContext;
+using FX.Application.Helpers;
+using FX.Domain.ReadOnly;
 using FX.DTO.OAuth;
 using FX.DTO.WriteOnly.AuthDTO;
 using Microsoft.AspNetCore.Authorization;
@@ -12,6 +14,7 @@ using Microsoft.AspNetCore.WebUtilities;
 using System.Net;
 using System.Security.Claims;
 using System.Text;
+using System.Threading;
 
 namespace FX.API.Controllers.Auth
 {
@@ -24,18 +27,21 @@ namespace FX.API.Controllers.Auth
         private readonly ITokenGenerator _tokenGenerator;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly ITokenAuth _tokenAuth;
 
         public AuthController(
             IUserAuth userAuth,
             ITokenGenerator tokenGenerator,
             SignInManager<ApplicationUser> signInManager,
-            UserManager<ApplicationUser> userManager
+            UserManager<ApplicationUser> userManager,
+            ITokenAuth tokenAuth
             )
         {
             _userAuth = userAuth;
             _tokenGenerator = tokenGenerator;
             _signInManager = signInManager;
             _userManager = userManager;
+            _tokenAuth = tokenAuth;
         }
 
         /// <summary>
@@ -44,17 +50,28 @@ namespace FX.API.Controllers.Auth
         /// <param name="registerUserDTO"></param>
         /// <returns></returns>
         [HttpPost]
-        [Route("create_user")]
+        [Route("register_new_user")]
         [ProducesResponseType(typeof(JsonMessage<string>), 200)]
-        public async Task<IActionResult> CreateUser([FromBody] RegisterUserDTO registerUserDTO)
+        public async Task<IActionResult> RegisterNewUser([FromBody] RegisterUserDTO registerUserDTO, CancellationToken cancellationToken)
         {
             #region Register User
+            _tokenAuth.OneTimePasswordEmailEventhandler += fluentEmail.SendOneTimeCodeEmail;
+
             var result = await _userAuth.RegisterUser(registerUserDTO);
 
             if (string.IsNullOrWhiteSpace(result))
             {
-                // send email to verify email
-
+                // send otp email to verify user
+                string code = Util.GenerateRandomDigits(6);
+                OneTimeCodeDTO oneTimeCodeDTO = new OneTimeCodeDTO()
+                {
+                    Token = code,
+                    Sender = registerUserDTO.EmailAddress
+                };
+                // Save token to the sender
+                await _tokenAuth.AddOneTimeCodeToSender(oneTimeCodeDTO, cancellationToken);
+                //unsubcribe event
+                _tokenAuth.OneTimePasswordEmailEventhandler -= fluentEmail.SendOneTimeCodeEmail;
                 return Ok(new JsonMessage<string>()
                 {
                     status = true,
