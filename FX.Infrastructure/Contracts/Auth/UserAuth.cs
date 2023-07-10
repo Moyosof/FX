@@ -1,11 +1,15 @@
 ﻿using FX.Application.Contracts.Auth;
 using FX.Application.DataContext;
+using FX.DataAccess.UnitOfWork.Interface;
+using FX.Domain.Entities.Core.AuthUser;
 using FX.Domain.Enum;
+using FX.Domain.ReadOnly;
 using FX.DTO.OAuth;
 using FX.DTO.WriteOnly.AuthDTO;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,20 +18,24 @@ using System.Threading.Tasks;
 
 namespace FX.Infrastructure.Contracts.Auth
 {
-    public class UserAuth : IUserAuth
+    public class UserAuth : IUserAuth, ITokenAuth
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IUserStore<ApplicationUser> _userStore;
         private readonly IWebHostEnvironment env;
         private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IUnitOfWork<OneTimeCode> _unitOfWorkOTP;
+
+        public event Func<object, OneTimeCodeDTO, CancellationToken, Task> OneTimePasswordEmailEventhandler;
 
         public UserAuth(
             SignInManager<ApplicationUser> signInManager,
             UserManager<ApplicationUser> userManager,
             IUserStore<ApplicationUser> userStore,
             IWebHostEnvironment _env,
-            RoleManager<IdentityRole> roleManager
+            RoleManager<IdentityRole> roleManager,
+            IUnitOfWork<OneTimeCode> unitOfWorkOTP
             )
         {
             _signInManager = signInManager;
@@ -35,6 +43,7 @@ namespace FX.Infrastructure.Contracts.Auth
             _userStore = userStore;
             env = _env;
             _roleManager = roleManager;
+            _unitOfWorkOTP = unitOfWorkOTP;
         }
 
 
@@ -60,27 +69,7 @@ namespace FX.Infrastructure.Contracts.Auth
             }
             return "Invalid Login credentials";
         }
-        //public async Task<AuthResponse> LoginUser(LoginDTO loginDTO)
-        //{
-        //    var result = await _signInManager.CheckPasswordSignInAsync(, loginDTO.Password, lockoutOnFailure: false) .PasswordSignInAsync(loginDTO.Email, loginDTO.Password, false, lockoutOnFailure: false);
-
-        //    if (result.Succeeded)
-        //    {
-        //        return new AuthResponse();
-        //    }
-        //    else if (result.IsLockedOut)
-        //    {
-        //        throw new ApplicationException("Account locked. Please contact support.");
-        //    }
-        //    else if (result.RequiresTwoFactor)
-        //    {
-        //        throw new ApplicationException("Two-factor authentication is required.");
-        //    }
-        //    else
-        //    {
-        //        throw new ApplicationException("Invalid login credentials.");
-        //    }
-        //}
+       
 
         /// <summary>
         /// Find User by Username
@@ -184,7 +173,62 @@ namespace FX.Infrastructure.Contracts.Auth
 
             return AddUserToRole.Errors.First().Description;
         }
-
         #endregion
+
+        public async Task AddOneTimeCodeToSender(OneTimeCodeDTO oneTimeCodeDTO, CancellationToken token)
+        {
+            OneTimeCode oneTimeCode = new OneTimeCode(oneTimeCodeDTO);
+            try
+            {
+                await _unitOfWorkOTP.Repository.Add(oneTimeCode);
+                await _unitOfWorkOTP.SaveAsync();
+            }
+            catch(Exception ex)
+            {
+                throw;
+            }
+            await Task.Delay(1000);
+            //Invoke events
+            await OnOtpAuth(oneTimeCodeDTO, token);
+        }
+
+        public async Task<string> VerifyOneTimeCode(VerifyOneTimeCodeDTO verifyOneTimeCodeDTO)
+        {
+            var tokenDb = await _unitOfWorkOTP.Repository.ReadAllQuery().Where(x => x.IsUsed == false && x.Token == verifyOneTimeCodeDTO.Token && x.Sender == verifyOneTimeCodeDTO.Sender && x.ExpiringDate > DateTime.UtcNow).FirstOrDefaultAsync();
+            if (tokenDb is not null)
+            {
+                tokenDb.IsUsed = true;
+                await _unitOfWorkOTP.SaveAsync();
+
+                // get username
+                var user = await GetByUserName(verifyOneTimeCodeDTO.Sender);
+                if (user is not null)
+                {
+                    user.EmailConfirmed = true;
+                    await _userManager.UpdateAsync(user);
+                    return string.Empty;
+                }
+                return "User not found";
+
+            }
+            return "Invalid Token";
+        }
+
+        protected async virtual Task OnOtpAuth(OneTimeCodeDTO oneTimeCodeDTO, CancellationToken cancellationToken)
+        {
+            Func<object, OneTimeCodeDTO, CancellationToken, Task> handler = OneTimePasswordEmailEventhandler;
+            if (handler is not null)
+            {
+                Delegate[] invocationList = handler.GetInvocationList();
+                Task[] handlerTasks = new Task[invocationList.Length];
+                for(int i = 0; i < invocationList.Length; i++)
+                {
+                    handlerTasks[i] = ((Func<object, OneTimeCodeDTO, CancellationToken, Task>)invocationList[i])(this, oneTimeCodeDTO, cancellationToken);
+                }
+
+                await Task.WhenAll(handlerTasks);
+            }
+        }
+        
     }
 }
