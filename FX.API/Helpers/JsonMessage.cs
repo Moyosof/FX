@@ -9,6 +9,9 @@ namespace FX.API.Helpers
         [JsonProperty("result")]
         public List<T> result { get; set; }
 
+        [JsonProperty("results_2")]
+        public object[] Results2 { get; set; }
+
         [JsonProperty("status")]
         public bool status { get; set; }
 

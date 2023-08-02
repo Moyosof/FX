@@ -32,6 +32,8 @@ using FX.Application.Contracts.Auth;
 using FX.Infrastructure.Contracts.Auth;
 using System.Net.Mail;
 using System.Net;
+using FX.Application.Contracts.Core;
+using FX.Infrastructure.Contracts.Core;
 
 namespace FX.IoC.Dependencies
 {
@@ -55,6 +57,7 @@ namespace FX.IoC.Dependencies
             services.AddScoped<ISqlDBObjects, SqlDBObjects>();
             services.AddScoped<IUserAuth, UserAuth>();
             services.AddScoped<ITokenAuth, UserAuth>();
+            services.AddScoped<ICourseUpload, CourseUploadService>();
 
 
             services.AddTransient<IMailService, MailService>();
@@ -123,7 +126,9 @@ namespace FX.IoC.Dependencies
             #region Fluent Email
             var client = new SmtpClient();
             client.Credentials = new NetworkCredential(Configuration["FluentEmail:Username"], Configuration["FluentEmail:Password"]);
-            client.Host = Configuration["FluentEmail:Host"];
+           // client.Host = Configuration["FluentEmail:Host"];
+            string host = Configuration.GetValue<string>("FluentEmail:Host", "default_host");
+            client.Host = host;
             client.Port = 587;
             client.EnableSsl = true;
             services.AddFluentEmail(Configuration["FluentEmail:Username"], "Reisty Support")
