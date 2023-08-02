@@ -21,6 +21,13 @@ namespace FX.Domain.Entities.Core
             CourseTitle = courseUploadDto.CourseTitle;
             CourseDescription = courseUploadDto.CourseDescription;
         }
+        public CourseUpload(CourseUploadDTO courseUploadDTO)
+        {
+            CourseId = Guid.NewGuid();
+            CourseTitle = courseUploadDTO.CourseTitle;
+            CourseDescription = courseUploadDTO.CourseDescription;
+        }
+
         [Key]
         public Guid CourseId { get; set; }
         public string CourseTitle { get; set; }

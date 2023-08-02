@@ -9,9 +9,9 @@ namespace FX.Application.EmailService
 {
     public interface IFluentEmailClient
     {
-        Task SendChangePasswordEmail(string userEmail);
-        Task SendForgotPasswordEmail();
-        Task SendResetPasswordEmail();
+        //Task SendChangePasswordEmail(string userEmail);
+        //Task SendForgotPasswordEmail();
+        //Task SendResetPasswordEmail();
 
         /// <summary>
         /// Sends email to the sender once the event is trigered

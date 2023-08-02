@@ -16,15 +16,15 @@ namespace FX.Infrastructure.EmailService
         {
             _fluentEmail = fluentEmail;
         }
-        public Task SendChangePasswordEmail(string userEmail)
-        {
-            throw new NotImplementedException();
-        }
+        //public Task SendChangePasswordEmail(string userEmail)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public Task SendForgotPasswordEmail()
-        {
-            throw new NotImplementedException();
-        }
+        //public Task SendForgotPasswordEmail()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public async Task SendOneTimeCodeEmail(object source, OneTimeCodeDTO oneTimeCodeDTO, CancellationToken cancellationToken)
         {
@@ -36,9 +36,9 @@ namespace FX.Infrastructure.EmailService
             await newEmail.SendAsync(cancellationToken);
         }
 
-        public Task SendResetPasswordEmail()
-        {
-            throw new NotImplementedException();
-        }
+        //public Task SendResetPasswordEmail()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CloudinaryDotNet" Version="1.22.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\FX.Application\FX.Application.csproj" />
     <ProjectReference Include="..\FX.Data\FX.Data.csproj" />
   </ItemGroup>
