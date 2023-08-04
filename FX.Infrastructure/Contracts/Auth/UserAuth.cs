@@ -229,6 +229,18 @@ namespace FX.Infrastructure.Contracts.Auth
                 await Task.WhenAll(handlerTasks);
             }
         }
-        
+
+        public async Task<string> DeleteUser(string Id)
+        {
+            var user = await _userManager.FindByIdAsync(Id);
+            if (user is not null)
+            {
+                await _userManager.DeleteAsync(user);
+                return string.Empty;
+            }
+            return "User not found";
+
+        }
+
     }
 }

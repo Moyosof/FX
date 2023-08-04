@@ -239,6 +239,36 @@ namespace FX.API.Controllers.Auth
             });
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        [HttpDelete]
+        [Route("delete_user/{Id}")]
+        [AllowAnonymous]
+        [ProducesResponseType(typeof(JsonMessage<string>), 200)]
+        public async Task<IActionResult> DeleteUser(string Id)
+        {
+            string result = await _userAuth.DeleteUser(Id);
+            if (string.IsNullOrWhiteSpace(result))
+            {
+
+                return Ok(new JsonMessage<string>()
+                {
+                    status = true,
+                    success_message = "successful",
+                    status_code = (int)HttpStatusCode.OK
+                });
+            }
+            return Ok(new JsonMessage<string>()
+            {
+                error_message = result,
+                status = false,
+                status_code = (int)HttpStatusCode.NotFound
+            });
+        }
+
     }
 
 }
