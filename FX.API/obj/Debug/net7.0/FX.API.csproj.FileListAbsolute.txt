@@ -237,3 +237,4 @@ C:\Users\taiwo\Desktop\FX\FX.API\bin\Debug\net7.0\tr\Microsoft.CodeAnalysis.CSha
 C:\Users\taiwo\Desktop\FX\FX.API\bin\Debug\net7.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\taiwo\Desktop\FX\FX.API\bin\Debug\net7.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\taiwo\Desktop\FX\FX.API\bin\Debug\net7.0\CloudinaryDotNet.dll
+C:\Users\USER\Desktop\FX\FX.API\bin\Debug\net7.0\CloudinaryDotNet.dll

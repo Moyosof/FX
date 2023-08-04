@@ -19,5 +19,7 @@ namespace FX.Application.Contracts.Auth
         Task<string> ChangePassword(string userEmail, ChangePasswordDTO passwordDTO);
         Task<string> PasswordResetToken(ApplicationUser user);
         Task<string> ResetUserPassword(ApplicationUser user, string token, string newPassword);
+        Task<string> DeleteUser(string Id);
+
     }
 }
