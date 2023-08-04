@@ -29,11 +29,5 @@
       "applicationUrl": "http://localhost:37555",
       "sslPort": 44391
     }
-  },
-  "CloudinarySettings": {
-    "CloudName": "dlhkoxotj",
-    "ApiKey": "175153511611723",
-    "ApiSecret": "XDmaT5JxWageRrTKuSdnH5eXOIU"
-  }
   }
 }

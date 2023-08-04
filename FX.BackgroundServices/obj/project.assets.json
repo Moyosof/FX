@@ -5144,19 +5144,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\taiwo\\.nuget\\packages\\": {}
+    "C:\\Users\\USER\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\taiwo\\Desktop\\FX\\FX.BackgroundServices\\FX.BackgroundServices.csproj",
+      "projectUniqueName": "C:\\Users\\USER\\Desktop\\FX\\FX.BackgroundServices\\FX.BackgroundServices.csproj",
       "projectName": "FX.BackgroundServices",
-      "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.BackgroundServices\\FX.BackgroundServices.csproj",
-      "packagesPath": "C:\\Users\\taiwo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.BackgroundServices\\obj\\",
+      "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.BackgroundServices\\FX.BackgroundServices.csproj",
+      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\USER\\Desktop\\FX\\FX.BackgroundServices\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\taiwo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5170,8 +5170,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\taiwo\\Desktop\\FX\\FX.Application\\FX.Application.csproj": {
-              "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.Application\\FX.Application.csproj"
+            "C:\\Users\\USER\\Desktop\\FX\\FX.Application\\FX.Application.csproj": {
+              "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.Application\\FX.Application.csproj"
             }
           }
         }
@@ -5211,7 +5211,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
