@@ -3,6 +3,7 @@ using System;
 using FX.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FX.Data.Migrations
 {
     [DbContext(typeof(FXDbContext))]
-    partial class FXDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230808175627_foreignkey Added")]
+    partial class foreignkeyAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

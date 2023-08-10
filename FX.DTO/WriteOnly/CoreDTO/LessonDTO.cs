@@ -9,8 +9,9 @@ namespace FX.DTO.WriteOnly.CoreDTO
 {
     public class LessonDTO
     {
+        public Guid CourseId { get; set; }
         public string LessonTitle { get; set; }
         public IFormFile VideoContent { get; set; }
-        public IFormFile TextContent { get; set; } 
+        public string TextContent { get; set; } 
     }
 }

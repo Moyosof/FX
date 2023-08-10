@@ -89,7 +89,7 @@ namespace FX.Infrastructure.FileService
                 else
                 {
                     // throw new Exception("Failed to delete the image from Cloudinary.");
-                    return "Failed to delete the image from Cloudinary.";
+                    return "Failed to delete the video from Cloudinary.";
                 }
             }
             catch (Exception ex)

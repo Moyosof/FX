@@ -76,7 +76,7 @@ namespace FX.Infrastructure.Contracts.Core
 
         public async Task<CourseUploadDto> GetCourse(Guid id)
         {
-            var course = await _unitOfWork.Repository.ReadSingle(id);
+            var course = await _unitOfWork.Repository.ReadAllQuery().Where(x => x.CourseId == id).Include(x => x.Lessons).FirstOrDefaultAsync();
             CourseUploadDto courseUpload = new CourseUploadDto (course);
             return courseUpload;
         }

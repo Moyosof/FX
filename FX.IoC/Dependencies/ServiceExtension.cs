@@ -34,6 +34,9 @@ using System.Net.Mail;
 using System.Net;
 using FX.Application.Contracts.Core;
 using FX.Infrastructure.Contracts.Core;
+using FX.Application.FileService;
+using FX.Infrastructure.FileService;
+using FX.DTO;
 
 namespace FX.IoC.Dependencies
 {
@@ -58,11 +61,14 @@ namespace FX.IoC.Dependencies
             services.AddScoped<IUserAuth, UserAuth>();
             services.AddScoped<ITokenAuth, UserAuth>();
             services.AddScoped<ICourseUpload, CourseUploadService>();
+            services.AddScoped<ILessonService, LessonService>();
 
 
             services.AddTransient<IMailService, MailService>();
             services.AddTransient<ISmsService, SmsService>();
             services.AddTransient<IFluentEmailClient, FluentEmailClientService>();
+            services.AddTransient<IFileService, FileService>();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
 
 
 

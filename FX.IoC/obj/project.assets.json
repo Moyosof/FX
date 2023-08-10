@@ -6555,19 +6555,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\USER\\.nuget\\packages\\": {}
+    "C:\\Users\\taiwo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\USER\\Desktop\\FX\\FX.IoC\\FX.IoC.csproj",
+      "projectUniqueName": "C:\\Users\\taiwo\\Desktop\\FX\\FX.IoC\\FX.IoC.csproj",
       "projectName": "FX.IoC",
-      "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.IoC\\FX.IoC.csproj",
-      "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\USER\\Desktop\\FX\\FX.IoC\\obj\\",
+      "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.IoC\\FX.IoC.csproj",
+      "packagesPath": "C:\\Users\\taiwo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.IoC\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\taiwo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6581,17 +6581,17 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\USER\\Desktop\\FX\\FX.Application\\FX.Application.csproj": {
-              "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.Application\\FX.Application.csproj"
+            "C:\\Users\\taiwo\\Desktop\\FX\\FX.Application\\FX.Application.csproj": {
+              "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.Application\\FX.Application.csproj"
             },
-            "C:\\Users\\USER\\Desktop\\FX\\FX.BackgroundServices\\FX.BackgroundServices.csproj": {
-              "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.BackgroundServices\\FX.BackgroundServices.csproj"
+            "C:\\Users\\taiwo\\Desktop\\FX\\FX.BackgroundServices\\FX.BackgroundServices.csproj": {
+              "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.BackgroundServices\\FX.BackgroundServices.csproj"
             },
-            "C:\\Users\\USER\\Desktop\\FX\\FX.DataAccess\\FX.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.DataAccess\\FX.DataAccess.csproj"
+            "C:\\Users\\taiwo\\Desktop\\FX\\FX.DataAccess\\FX.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.DataAccess\\FX.DataAccess.csproj"
             },
-            "C:\\Users\\USER\\Desktop\\FX\\FX.Infrastructure\\FX.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\USER\\Desktop\\FX\\FX.Infrastructure\\FX.Infrastructure.csproj"
+            "C:\\Users\\taiwo\\Desktop\\FX\\FX.Infrastructure\\FX.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\taiwo\\Desktop\\FX\\FX.Infrastructure\\FX.Infrastructure.csproj"
             }
           }
         }
@@ -6647,7 +6647,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
